@@ -1,0 +1,66 @@
+{
+    "bodyTypeName": "female",
+    "url": "https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator/#?body=Body_color_light&head=Human_female_light&sex=female&shadow=Shadow_shadow&dress=none&legs=Legion_skirt_black&clothes=Blouse_lavender&vest=Corset_black&shoes=Boots_lavender&hair=Long_messy_blonde",
+    "spritesheets": "https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator/spritesheets/",
+    "version": 1,
+    "datetime": "29/12/2023 23:12:15",
+    "credits": "Authors: drjamgo@hotmail.com, Benjamin K. Smith (BenCreating), bluecarrot16, TheraHedwig, Evert, MuffinElZangano, Durrani, Pierre Vigier (pvigier), ElizaWy, Matthew Krohn (makrohn), Johannes Sjölund (wulax), Stephen Challener (Redshrike), Mandi Paugh, Nila122, Lanea Zimmerman (Sharm)\n\n- shadow/adult/shadow.png: by drjamgo@hotmail.com. License(s): CC0. \n    - https://opengameart.org/content/shadow-for-lpc-sprite\n\n- body/bodies/female/universal/light.png: by Benjamin K. Smith (BenCreating), bluecarrot16, TheraHedwig, Evert, MuffinElZangano, Durrani, Pierre Vigier (pvigier), ElizaWy, Matthew Krohn (makrohn), Johannes Sjölund (wulax), Stephen Challener (Redshrike). License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles\n    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites\n    - https://opengameart.org/content/lpc-ladies\n    - https://opengameart.org/content/lpc-7-womens-shirts\n    - https://opengameart.org/content/lpc-jump-expanded\n\n- head/heads/human_female/universal/light.png: by bluecarrot16, Benjamin K. Smith (BenCreating), Stephen Challener (Redshrike). License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/\n    - https://opengameart.org/content/lpc-character-bases\n\n- hair/long_messy/female/blonde.png: by Mandi Paugh, bluecarrot16. License(s): GPL 2.0, GPL 3.0, CC-BY 3.0. \n    - https://opengameart.org/content/puck-overland\n    - https://opengameart.org/content/lpc-hair\n\n- torso/clothes/corset/female/black.png: by ElizaWy, Nila122. License(s): CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/lpc-clothes-and-hair\n    - https://opengameart.org/content/lpc-7-womens-shirts\n\n- torso/clothes/blouse/female/lavender.png: by bluecarrot16, ElizaWy, Lanea Zimmerman (Sharm). License(s): CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles\n    - https://opengameart.org/content/lpc-7-womens-shirts\n\n- legs/skirts/legion/female/black.png: by bluecarrot16, Nila122. License(s): CC-BY-SA 3.0, GPL 2.0, GPL 3.0. \n    - https://opengameart.org/content/lpc-roman-armor\n    - http://opengameart.org/content/lpc-clothing-updates\n\n- feet/boots/female/lavender.png: by bluecarrot16, Nila122. License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 2.0, GPL 3.0. \n    - https://opengameart.org/content/lpc-clothes-and-hair",
+    "layers": [
+      {
+        "fileName": "shadow/adult/shadow.png",
+        "zPos": 0,
+        "parentName": "shadow",
+        "name": "Shadow",
+        "variant": "shadow"
+      },
+      {
+        "fileName": "body/bodies/female/universal/light.png",
+        "zPos": 10,
+        "parentName": "body",
+        "name": "Body color",
+        "variant": "light"
+      },
+      {
+        "fileName": "legs/skirts/legion/female/black.png",
+        "zPos": 20,
+        "parentName": "legs",
+        "name": "Legion skirt",
+        "variant": "black"
+      },
+      {
+        "fileName": "feet/boots/female/lavender.png",
+        "zPos": 25,
+        "parentName": "shoes",
+        "name": "Boots",
+        "variant": "lavender"
+      },
+      {
+        "fileName": "torso/clothes/blouse/female/lavender.png",
+        "zPos": 35,
+        "parentName": "clothes",
+        "name": "Blouse",
+        "variant": "lavender"
+      },
+      {
+        "fileName": "torso/clothes/corset/female/black.png",
+        "zPos": 45,
+        "parentName": "vest",
+        "name": "Corset",
+        "variant": "black"
+      },
+      {
+        "fileName": "head/heads/human_female/universal/light.png",
+        "zPos": 100,
+        "parentName": "head",
+        "name": "Human female",
+        "variant": "light"
+      },
+      {
+        "fileName": "hair/long_messy/female/blonde.png",
+        "zPos": 120,
+        "parentName": "hair",
+        "name": "Long messy",
+        "variant": "blonde"
+      }
+    ]
+  }

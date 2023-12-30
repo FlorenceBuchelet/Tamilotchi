@@ -1,0 +1,70 @@
+@import "./variables.scss";
+
+.tamagotchi__egg {
+  border: 1px solid black;
+  border-radius: 100%;
+  border-bottom-right-radius: 340px;
+  border-bottom-left-radius: 340px;
+  width: 350px;
+  height: 400px;
+  margin: auto;
+  background-color: $tamagotchi-bg;
+  margin-block: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../public/whitebg.jpg");
+  background-position: center;
+  background-size: contain;
+  box-shadow: inset 0 0 18px black;
+}
+
+.keyring__hole {
+  border: 2px solid $accent;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background-color: $background;
+  margin-block-start: 15px;
+  box-shadow: 0 0 10px white,
+  inset 2px 2px $accent;
+
+}
+
+.tamagotchi__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block-start: 10px;
+  font-size: 25px;
+}
+
+.tamagotchi__title {
+  font-family: "Single Day", cursive;
+  text-shadow: $text-outline;
+}
+
+.tamagotchi {
+  border: 1px solid $screen-border;
+  border-radius: 10px;
+  background-color: $screen-bg;
+  width: 200px;
+  height: 200px;
+  box-shadow: inset 0 0 8px rgb(95, 95, 95);
+}
+
+.tamagotchi__buttons {
+  display: flex;
+  gap: 15px;
+  & button {
+    width: 35px;
+    height: 35px;
+    background-color: $buttons;
+    border-radius: 100%;
+    margin-block-start: 10px;
+    box-shadow: 0 0 3px black;
+  }
+  & .secondButton {
+    margin-block-start: 20px;
+  }
+}

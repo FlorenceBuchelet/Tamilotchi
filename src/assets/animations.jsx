@@ -15,7 +15,7 @@ const walkingChick = [
     id: 4,
     url: "/chick4--left.png",
   },
-  {
+/*   {
     id: 5,
     url: "./chick1--right.png",
   },
@@ -30,7 +30,7 @@ const walkingChick = [
   {
     id: 8,
     url: "/chick4--right.png",
-  },
+  }, */
 ];
 
 export default walkingChick;

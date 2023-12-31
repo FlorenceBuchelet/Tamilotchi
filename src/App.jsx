@@ -1,67 +1,51 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.scss";
 import Tamilotchi from "./components/Tamilotchi/Tamilotchi";
 
 function App() {
-  const [button, setButton] = useState(1);
-  const [firstButtonClass, setFirstButtonClass] = useState(
+  const [menu, setMenu] = useState(1);
+  const [firstMenuClass, setFirstMenuClass] = useState(
     "tamilotchi__buttons--active"
   );
-  const [secondButtonClass, setSecondButtonClass] = useState(" ");
-  const [thirdButtonClass, setThirdButtonClass] = useState(" ");
+  const [secondMenuClass, setSecondMenuClass] = useState(" ");
+  const [thirdMenuClass, setThirdMenuClass] = useState(" ");
   const [milo, setMilo] = useState("😁");
 
+  useEffect(() => {
+    if (menu === 1) {
+      setFirstMenuClass("tamilotchi__buttons--active");
+      setSecondMenuClass(" ");
+      setThirdMenuClass(" ");
+    } else if (menu === 2) {
+      setFirstMenuClass(" ");
+      setSecondMenuClass("tamilotchi__buttons--active");
+      setThirdMenuClass(" ");
+    } else if (menu === 3) {
+      setFirstMenuClass(" ");
+      setSecondMenuClass(" ");
+      setThirdMenuClass("tamilotchi__buttons--active");
+    }
+  }, [menu]);
+
   const handleClickLeft = () => {
-    if (button > 1) {
-      setButton(button - 1);
-      console.log("left", button);
+    if (menu > 1) {
+      setMenu(menu - 1);
     }
   };
 
-  const handleLeft = () => {
-    handleClass();
-    handleClickLeft();
-    console.log("2 left", button);
-  };
-
-  const handleClikRight = () => {
-    if (button < 3) {
-      setButton(button + 1);
-      console.log("right", button);
+  const handleClickRight = () => {
+    if (menu < 3) {
+      setMenu(menu + 1);
     }
-  };
-
-  const handleRight = () => {
-    handleClass();
-    handleClikRight();
-    console.log("2 right", button);
   };
 
   const handleClickOK = () => {
-    handleClass();
-    if (button === 1) {
-      setMilo("🎶");
-    } else if (button === 2) {
-      setMilo("📚");
-    } else if (button === 3) {
-      setMilo("🎨");
-    }
-    console.log("ok", button);
-  };
-
-  const handleClass = () => {
-    if (button === 1) {
-      setFirstButtonClass("tamilotchi__buttons--active");
-      setSecondButtonClass(" ");
-      setThirdButtonClass(" ");
-    } else if (button === 2) {
-      setFirstButtonClass(" ");
-      setSecondButtonClass("tamilotchi__buttons--active");
-      setThirdButtonClass(" ");
-    } else if (button === 3) {
-      setFirstButtonClass(" ");
-      setSecondButtonClass(" ");
-      setThirdButtonClass("tamilotchi__buttons--active");
+    if (menu === 1) {
+      setMilo("💤");
+    } else if (menu === 2) {
+      setMilo("🌽");
+    } else if (menu === 3) {
+      setMilo("🥚");
     }
   };
 
@@ -72,9 +56,9 @@ function App() {
         <h1 className="tamagotchi__title">Tamilotchi</h1>
         <div className="tamagotchi">
           <Tamilotchi
-            firstButtonClass={firstButtonClass}
-            secondButtonClass={secondButtonClass}
-            thirdButtonClass={thirdButtonClass}
+            firstMenuClass={firstMenuClass}
+            secondMenuClass={secondMenuClass}
+            thirdMenuClass={thirdMenuClass}
             milo={milo}
           />
         </div>
@@ -82,7 +66,7 @@ function App() {
       <ul className="tamagotchi__buttons">
         <button
           type="button"
-          onClick={() => handleLeft()}
+          onClick={() => handleClickLeft()}
           className="firstButton"
         />
         <button
@@ -92,7 +76,7 @@ function App() {
         />
         <button
           type="button"
-          onClick={() => handleRight()}
+          onClick={() => handleClickRight()}
           className="thirdButton"
         />
       </ul>

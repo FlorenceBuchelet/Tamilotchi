@@ -11,6 +11,83 @@ function App() {
   const [thirdMenuClass, setThirdMenuClass] = useState(" ");
   const [milo, setMilo] = useState("😁");
 
+  // pet's stats management
+  const [pet, setPet] = useState({
+    name: "Tama",
+    hunger: 50,
+    happiness: 50,
+    health: 50,
+    age: 0,
+    isAlive: true,
+  });
+
+  const feed = () => {
+    setPet((prevPet) => ({
+      ...prevPet,
+      hunger: prevPet.hunger - 10,
+      happiness: prevPet.happiness + 5,
+      health: prevPet.health + 2,
+      age: prevPet.age + 1,
+    }));
+    checkStatus();
+  };
+
+  const play = () => {
+    setPet((prevPet) => ({
+      ...prevPet,
+      hunger: prevPet.hunger + 5,
+      happiness: prevPet.happiness + 10,
+      health: prevPet.health + 3,
+      age: prevPet.age + 1,
+    }));
+    checkStatus();
+  };
+
+  const clean = () => {
+    setPet((prevPet) => ({
+      ...prevPet,
+      happiness: prevPet.happiness + 5,
+      health: prevPet.health + 5,
+    }));
+    checkStatus();
+  }
+
+  const decayStats = () => {
+    setPet((prevPet) => ({
+      ...prevPet,
+      hunger: prevPet.hunger + 2,
+      happiness: prevPet.happiness - 2,
+      health: prevPet.health - 1,
+      age: prevPet.age + 1,
+    }));
+    checkStatus();
+  };
+
+  const checkStatus = () => {
+    if (pet.hunger >= 100 || pet.happiness <= 0 || pet.health <= 0) {
+      setPet((prevPet) => ({ ...prevPet, isAlive: false }));
+      alert(`${pet.name} has passed away. Game over!`);
+    }
+  };
+
+  useEffect(() => {
+    const decayInterval = setInterval(decayStats, 5000); // Decay stats every 5 seconds
+
+    return () => {
+      clearInterval(decayInterval);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (pet.isAlive) {
+      console.log(`${pet.name} is doing well.`);
+      console.log(
+        `Hunger: ${pet.hunger}, Happiness: ${pet.happiness}, Health: ${pet.health}, Age: ${pet.age}`
+      );
+    }
+  }, [pet]);
+  // end of the pet's stats management
+
   useEffect(() => {
     if (menu === 1) {
       setFirstMenuClass("tamilotchi__buttons--active");
@@ -41,11 +118,14 @@ function App() {
 
   const handleClickOK = () => {
     if (menu === 1) {
-      setMilo("💤");
+      setMilo("💩");
+      clean();
     } else if (menu === 2) {
       setMilo("🌽");
+      feed();
     } else if (menu === 3) {
       setMilo("🥚");
+      play();
     }
   };
 

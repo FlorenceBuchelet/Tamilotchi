@@ -6,12 +6,12 @@ function Tamilotchi({ firstMenuClass, secondMenuClass, thirdMenuClass, milo }) {
   const [sprite, setSprite] = useState(0);
 
   /***
-   * Interval needs to be cleared to avoid lags and gaps in the animation
+   * Interval needs to be cleaned to avoid lags and gaps in the animation
    * so we need to declare it with no value: <let intervalId;> would also work, the undefined is implied.
    * then we use prevSprite to increment <sprite>
-   * (prevState is an implied parameter in anystate, it ensure we use the latest updated value and helps avoid asynchronous behaviors)
+   * (prevState is an implied parameter in anystate, it ensures we use the latest updated value and helps avoid asynchronous behaviors)
    * then we set the interval into intervalId, 500 = 500ms
-   * then we clear it to be sure it stays smooth
+   * then we clean it to be sure it stays smooth
    */
   useEffect(() => {
     let intervalId = undefined;
@@ -19,6 +19,7 @@ function Tamilotchi({ firstMenuClass, secondMenuClass, thirdMenuClass, milo }) {
       setSprite((prevSprite) => (prevSprite + 1) % walkingChick.length);
     };
     intervalId = setInterval(animateSprite, 500);
+    // Cleanup function triggers when the component unmounts
     return () => clearInterval(intervalId);
   }, []);
 

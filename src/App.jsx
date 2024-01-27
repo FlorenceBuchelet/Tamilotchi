@@ -9,6 +9,9 @@ function App() {
   );
   const [secondMenuClass, setSecondMenuClass] = useState(" ");
   const [thirdMenuClass, setThirdMenuClass] = useState(" ");
+  const [fourthMenuClass, setFourthMenuClass] = useState(" ");
+  const [fifthMenuClass, setFifthMenuClass] = useState(" ");
+  const [sixthMenuClass, setSixthMenuClass] = useState(" ");
   const [milo, setMilo] = useState("😁");
 
   // pet's stats management
@@ -50,7 +53,7 @@ function App() {
       health: prevPet.health + 5,
     }));
     checkStatus();
-  }
+  };
 
   const decayStats = () => {
     setPet((prevPet) => ({
@@ -93,14 +96,44 @@ function App() {
       setFirstMenuClass("tamilotchi__buttons--active");
       setSecondMenuClass(" ");
       setThirdMenuClass(" ");
+      setFourthMenuClass(" ");
+      setFifthMenuClass(" ");
+      setSixthMenuClass(" ");
     } else if (menu === 2) {
       setFirstMenuClass(" ");
       setSecondMenuClass("tamilotchi__buttons--active");
       setThirdMenuClass(" ");
+      setFourthMenuClass(" ");
+      setFifthMenuClass(" ");
+      setSixthMenuClass(" ");
     } else if (menu === 3) {
       setFirstMenuClass(" ");
       setSecondMenuClass(" ");
       setThirdMenuClass("tamilotchi__buttons--active");
+      setFourthMenuClass(" ");
+      setFifthMenuClass(" ");
+      setSixthMenuClass(" ");
+    } else if (menu === 4) {
+      setFirstMenuClass(" ");
+      setSecondMenuClass(" ");
+      setThirdMenuClass("");
+      setFourthMenuClass("tamilotchi__buttons--active");
+      setFifthMenuClass(" ");
+      setSixthMenuClass(" ");
+    } else if (menu === 5) {
+      setFirstMenuClass(" ");
+      setSecondMenuClass(" ");
+      setThirdMenuClass(" ");
+      setFourthMenuClass(" ");
+      setFifthMenuClass("tamilotchi__buttons--active");
+      setSixthMenuClass(" ");
+    } else if (menu === 6) {
+      setFirstMenuClass(" ");
+      setSecondMenuClass(" ");
+      setThirdMenuClass(" ");
+      setFourthMenuClass(" ");
+      setFifthMenuClass(" ");
+      setSixthMenuClass("tamilotchi__buttons--active");
     }
   }, [menu]);
 
@@ -111,7 +144,7 @@ function App() {
   };
 
   const handleClickRight = () => {
-    if (menu < 3) {
+    if (menu < 6) {
       setMenu(menu + 1);
     }
   };
@@ -126,6 +159,15 @@ function App() {
     } else if (menu === 3) {
       setMilo("🥚");
       play();
+    } else if (menu === 4) {
+      setMilo("💪");
+      play();
+    } else if (menu === 5) {
+      setMilo("💕");
+      play();
+    } else if (menu === 6) {
+      setMilo("🎉");
+      play();
     }
   };
 
@@ -139,6 +181,9 @@ function App() {
             firstMenuClass={firstMenuClass}
             secondMenuClass={secondMenuClass}
             thirdMenuClass={thirdMenuClass}
+            fourthMenuClass={fourthMenuClass}
+            fifthMenuClass={fifthMenuClass}
+            sixthMenuClass={sixthMenuClass}
             milo={milo}
           />
         </div>

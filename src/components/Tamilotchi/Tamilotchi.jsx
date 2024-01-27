@@ -2,7 +2,7 @@ import "./Tamilotchi.scss";
 import walkingChick from "../../assets/animations";
 import { useEffect, useState } from "react";
 
-function Tamilotchi({ firstMenuClass, secondMenuClass, thirdMenuClass, milo }) {
+function Tamilotchi({ firstMenuClass, secondMenuClass, thirdMenuClass, fourthMenuClass, fifthMenuClass, sixthMenuClass, milo }) {
   const [sprite, setSprite] = useState(0);
 
   /***
@@ -25,6 +25,11 @@ function Tamilotchi({ firstMenuClass, secondMenuClass, thirdMenuClass, milo }) {
 
   return (
     <>
+      <ul className="tamilotchi__buttons">
+        <li className={firstMenuClass}>💤</li>
+        <li className={secondMenuClass}>🌽</li>
+        <li className={thirdMenuClass}>🥚</li>
+      </ul>
       <span className="tamilotchi">
         {milo}
         <img
@@ -34,9 +39,9 @@ function Tamilotchi({ firstMenuClass, secondMenuClass, thirdMenuClass, milo }) {
         />
       </span>
       <ul className="tamilotchi__buttons">
-        <li className={firstMenuClass}>💤</li>
-        <li className={secondMenuClass}>🌽</li>
-        <li className={thirdMenuClass}>🥚</li>
+        <li className={fourthMenuClass}>💪</li>
+        <li className={fifthMenuClass}>💕</li>
+        <li className={sixthMenuClass}>🎉</li>
       </ul>
     </>
   );

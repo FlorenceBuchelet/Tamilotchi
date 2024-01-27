@@ -2,7 +2,7 @@
 
 .tamilotchi {
   display: flex;
-  height: 75%;
+  height: 50%;
   justify-content: center;
   align-items: center;
 }
@@ -11,17 +11,11 @@
   display: flex;
   justify-content: space-around;
   height: 25%;
-  background-color: $menu-bg;
   text-align: center;
   & li {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 33%;
-    height: 100%;
-  }
-  & :nth-child(2) {
-    background-color: $menu-bg;
   }
 }
 

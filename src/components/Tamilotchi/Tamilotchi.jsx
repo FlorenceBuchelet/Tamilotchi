@@ -26,9 +26,9 @@ function Tamilotchi({ firstMenuClass, secondMenuClass, thirdMenuClass, fourthMen
   return (
     <>
       <ul className="tamilotchi__buttons">
-        <li className={firstMenuClass}><img className="tamilotchi__icons" src="/public/Food_icon_p1.webp" alt="feed" /></li>
-        <li className={secondMenuClass}><img className="tamilotchi__icons" src="/public/Training_icon_p1.webp" alt="feed" /></li>
-        <li className={thirdMenuClass}><img className="tamilotchi__icons" src="/public/Lights_icon_p1.webp" alt="feed" /></li>
+        <li className={firstMenuClass}><img className="tamilotchi__icons" src="/Food_icon_p1.webp" alt="feed" /></li>
+        <li className={secondMenuClass}><img className="tamilotchi__icons" src="/Training_icon_p1.webp" alt="feed" /></li>
+        <li className={thirdMenuClass}><img className="tamilotchi__icons" src="/Lights_icon_p1.webp" alt="feed" /></li>
       </ul>
       <span className="tamilotchi">
         {milo}
@@ -39,9 +39,9 @@ function Tamilotchi({ firstMenuClass, secondMenuClass, thirdMenuClass, fourthMen
         />
       </span>
       <ul className="tamilotchi__buttons">
-        <li className={fourthMenuClass}><img className="tamilotchi__icons" src="/public/Medicine_icon_p1.webp" alt="feed" /></li>
-        <li className={fifthMenuClass}><img className="tamilotchi__icons" src="/public/Bathroom_icon_p1.webp" alt="feed" /></li>
-        <li className={sixthMenuClass}><img className="tamilotchi__icons" src="/public/Attention_icon_p1.webp" alt="feed" /></li>
+        <li className={fourthMenuClass}><img className="tamilotchi__icons" src="/Medicine_icon_p1.webp" alt="feed" /></li>
+        <li className={fifthMenuClass}><img className="tamilotchi__icons" src="/Bathroom_icon_p1.webp" alt="feed" /></li>
+        <li className={sixthMenuClass}><img className="tamilotchi__icons" src="/Attention_icon_p1.webp" alt="feed" /></li>
       </ul>
     </>
   );

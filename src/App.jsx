@@ -12,7 +12,7 @@ function App() {
   const [fourthMenuClass, setFourthMenuClass] = useState(" ");
   const [fifthMenuClass, setFifthMenuClass] = useState(" ");
   const [sixthMenuClass, setSixthMenuClass] = useState(" ");
-  const [milo, setMilo] = useState("😁");
+  const [milo, setMilo] = useState("");
 
   // pet's stats management
   const [pet, setPet] = useState({

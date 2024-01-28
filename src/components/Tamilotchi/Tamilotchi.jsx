@@ -1,5 +1,5 @@
 import "./Tamilotchi.scss";
-import walkingChick from "../../assets/animations";
+import babytchiBlack from "../../assets/babytchiBlack";
 import { useEffect, useState } from "react";
 
 function Tamilotchi({ firstMenuClass, secondMenuClass, thirdMenuClass, fourthMenuClass, fifthMenuClass, sixthMenuClass, milo }) {
@@ -16,7 +16,7 @@ function Tamilotchi({ firstMenuClass, secondMenuClass, thirdMenuClass, fourthMen
   useEffect(() => {
     let intervalId = undefined;
     const animateSprite = () => {
-      setSprite((prevSprite) => (prevSprite + 1) % walkingChick.length);
+      setSprite((prevSprite) => (prevSprite + 1) % babytchiBlack.walk.length);
     };
     intervalId = setInterval(animateSprite, 500);
     // Cleanup function triggers when the component unmounts
@@ -26,22 +26,22 @@ function Tamilotchi({ firstMenuClass, secondMenuClass, thirdMenuClass, fourthMen
   return (
     <>
       <ul className="tamilotchi__buttons">
-        <li className={firstMenuClass}>💤</li>
-        <li className={secondMenuClass}>🌽</li>
-        <li className={thirdMenuClass}>🥚</li>
+        <li className={firstMenuClass}><img className="tamilotchi__icons" src="/public/Food_icon_p1.webp" alt="feed" /></li>
+        <li className={secondMenuClass}><img className="tamilotchi__icons" src="/public/Training_icon_p1.webp" alt="feed" /></li>
+        <li className={thirdMenuClass}><img className="tamilotchi__icons" src="/public/Lights_icon_p1.webp" alt="feed" /></li>
       </ul>
       <span className="tamilotchi">
         {milo}
         <img
-          className="chicken"
-          src={walkingChick[sprite].url}
-          alt="stardew valley chicken"
+          className="babytchi"
+          src={babytchiBlack.walk[sprite].url}
+          alt="babytchi"
         />
       </span>
       <ul className="tamilotchi__buttons">
-        <li className={fourthMenuClass}>💪</li>
-        <li className={fifthMenuClass}>💕</li>
-        <li className={sixthMenuClass}>🎉</li>
+        <li className={fourthMenuClass}><img className="tamilotchi__icons" src="/public/Medicine_icon_p1.webp" alt="feed" /></li>
+        <li className={fifthMenuClass}><img className="tamilotchi__icons" src="/public/Bathroom_icon_p1.webp" alt="feed" /></li>
+        <li className={sixthMenuClass}><img className="tamilotchi__icons" src="/public/Attention_icon_p1.webp" alt="feed" /></li>
       </ul>
     </>
   );

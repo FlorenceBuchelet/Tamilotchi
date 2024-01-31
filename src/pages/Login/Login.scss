@@ -1,12 +1,44 @@
 @import "../../variables.scss";
 
+.login {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+}
+
 .login__title {
 @include fun-titles;
 font-size: 5rem;
+margin-block-start: 5vh;
 }
 
 .login__form {
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 80%;
+    margin: auto;
+}
+
+.login__labels {
+    @include fun-titles;
+    text-align: start;
+}
+
+.login__inputs {
+    height: 3rem;
+    border-radius: 8px;
+}
+
+.login__register {
+    @include fun-titles;
+    font-size: 1.8rem;
+    cursor: pointer;
+    text-align: end;
+}
+
+.login__button {
+    @include buttons;
+    width: 75%;
+    margin: auto;
+    margin-block-start: 3vh;
 }

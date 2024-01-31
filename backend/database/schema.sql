@@ -1,4 +1,4 @@
-/* DROP DATABASE make_sense_v2; */
+DROP DATABASE make_sense_v2;
 CREATE DATABASE tamilotchi;
 USE tamilotchi;
 

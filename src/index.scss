@@ -6,10 +6,13 @@
     padding: 0;
     color: $dark-color;
     list-style: none;
+    & a {
+        all: unset;
+    }
 }
 
 html {
-    background-image: url("../public/bg(white).jpeg");
+    background-image: url("/bg-tama.png");
     background-position: center;
     background-size: cover;
 }

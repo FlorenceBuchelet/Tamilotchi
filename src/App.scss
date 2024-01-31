@@ -3,6 +3,7 @@
 .tamagotchi__egg {
   border: 1px solid $dark-color;
   border-radius: 100%;
+  // TO DO media query if screen under the size of the egg
   border-bottom-right-radius: 340px;
   border-bottom-left-radius: 340px;
   width: 350px;
@@ -13,7 +14,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("../public/whitebg(80).png");
+  background-image: url("/shells/whitebg(80).png");
   background-position: center;
   background-size: contain;
   box-shadow: inset 0 0 18px $dark-color;
@@ -28,7 +29,6 @@
   margin-block-start: 15px;
   box-shadow: 0 0 10px white,
   inset 2px 2px $dark-color;
-
 }
 
 .tamagotchi__container {
@@ -40,8 +40,7 @@
 }
 
 .tamagotchi__title {
-  font-family: "Single Day", cursive;
-  text-shadow: $text-outline;
+@include fun-titles;
 }
 
 .tamagotchi {
@@ -51,7 +50,7 @@
   width: 200px;
   height: 200px;
   box-shadow: inset 0 0 8px rgb(95, 95, 95);
-  background-image: url("/Gen1BG.png");
+  background-image: url("/backgrounds/Gen1BG.png");
   background-position: center;
   background-size: 100% 100%;
   background-repeat: no-repeat;

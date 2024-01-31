@@ -3,55 +3,55 @@ const eggs = {
   egg1: [
     {
       id: 1,
-      url: "/egg1-1.png"
+      url: "/sprites/eggs/egg1-1.png"
     },
     {
       id: 2,
-      url: "/egg1-2.png",
+      url: "/sprites/eggs/egg1-2.png",
     },
     {
       id: 3,
-      url: "/egg1-3.png",
+      url: "/sprites/eggs/egg1-3.png",
     },
     {
       id: 4,
-      url: "/egg1-4.png",
+      url: "/sprites/eggs/egg1-4.png",
     },
   ],
   egg2: [
     {
       id: 1,
-      url: "/egg2-1.png"
+      url: "/sprites/eggs/egg2-1.png"
     },
     {
       id: 2,
-      url: "/egg2-2.png",
+      url: "/sprites/eggs/egg2-2.png",
     },
     {
       id: 3,
-      url: "/egg2-3.png",
+      url: "/sprites/eggs/egg2-3.png",
     },
     {
       id: 4,
-      url: "/egg2-4.png",
+      url: "/sprites/eggs/egg2-4.png",
     },
   ],
   egg3: [
     {
       id: 1,
-      url: "/egg3-1.png"
+      url: "/sprites/eggs/egg3-1.png"
     },
     {
       id: 2,
-      url: "/egg3-2.png",
+      url: "/sprites/eggs/egg3-2.png",
     },
     {
       id: 3,
-      url: "/egg3-3.png",
+      url: "/sprites/eggs/egg3-3.png",
     },
     {
       id: 4,
-      url: "/egg3-4.png",
+      url: "/sprites/eggs/egg3-4.png",
     },
   ],
 };

@@ -1,5 +1,5 @@
 // General
-$background: white;
+$background: #b8abe3;
 
 // Tamagotchi egg
 $tamagotchi-bg: white;
@@ -27,7 +27,17 @@ $text-outline: $text-outline-color 3px 0px 0px,
   $text-outline-color 1.74541px -2.43999px 0px,
   $text-outline-color 2.44769px -1.73459px 0px,
   $text-outline-color 2.88051px -0.838247px 0px;
+$fun-font: "Single Day", cursive;
 
 // Tamilotchi
 $screen-bg: white;
 $menu-bg: rgba(160, 160, 160, 0.327);
+
+
+// Mixins
+@mixin fun-titles {
+  font-family: $fun-font;
+  text-shadow: $text-outline;
+  text-align: center;
+  font-size: 3.2rem;
+}

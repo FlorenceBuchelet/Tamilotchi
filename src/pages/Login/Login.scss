@@ -1,0 +1,12 @@
+@import "../../variables.scss";
+
+.login__title {
+@include fun-titles;
+font-size: 5rem;
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}

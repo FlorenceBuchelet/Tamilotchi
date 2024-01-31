@@ -1,5 +1,3 @@
-/* eslint-env node, es6 */
-
 const express = require("express");
 const router = express.Router();
 
@@ -8,6 +6,9 @@ const controllers = require("./controllers");
 
 // Route to get all users
 router.get("/", controllers.getAllUsers);
+
+// Registering
+router.post("/user/register", controllers.add);
 
 
 module.exports = router;

@@ -1,5 +1,3 @@
-/* eslint-env node, es6 */
-
 const Manager = require("./Manager");
 
 // Get all users
@@ -16,6 +14,19 @@ const getAllUsers = async (req, res, next) => {
   }
 };
 
+// Add a new user
+const add = async (req, res, next) => {
+  const user = req.body;
+  try {
+    const manager = new Manager({ table: 'user' });
+    const insertId = await manager.create(user);
+    res.status(201).json(insertId);
+  } catch (err) {
+    next(err);
+  }
+}
+
 module.exports = {
   getAllUsers,
+  add,
 };

@@ -1,5 +1,3 @@
-/* eslint-env node, es6 */
-
 require("dotenv").config();
 const express = require("express");
 const app = express();

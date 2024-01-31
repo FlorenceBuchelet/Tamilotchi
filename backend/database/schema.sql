@@ -1,10 +1,9 @@
-DROP DATABASE make_sense_v2;
+DROP DATABASE tamilotchi;
 CREATE DATABASE tamilotchi;
 USE tamilotchi;
 
 CREATE TABLE user (
 	user_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-	pseudo VARCHAR(50) NOT NULL,
 	email VARCHAR(255) NOT NULL,
 	hashed_password VARCHAR(50) NOT NULL
 );

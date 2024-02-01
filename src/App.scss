@@ -27,8 +27,9 @@
   border-radius: 100%;
   background-color: $background;
   margin-block-start: 15px;
-  box-shadow: 0 0 10px white,
-  inset 2px 2px $dark-color;
+  box-shadow:
+    0 0 10px white,
+    inset 2px 2px $dark-color;
 }
 
 .tamagotchi__container {
@@ -40,7 +41,7 @@
 }
 
 .tamagotchi__title {
-@include fun-titles;
+  @include fun-titles;
 }
 
 .tamagotchi {
@@ -65,7 +66,10 @@
     background-color: $buttons;
     border-radius: 100%;
     margin-block-start: 10px;
-    box-shadow: 0 0 7px black, 0 0 3px black, 0 0 1px black;
+    box-shadow:
+      0 0 7px black,
+      0 0 3px black,
+      0 0 1px black;
   }
   & .secondButton {
     margin-block-start: 20px;

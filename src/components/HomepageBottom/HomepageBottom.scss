@@ -1,0 +1,39 @@
+@import "../../variables.scss";
+
+.homepageBottom {
+    position: absolute;
+    bottom: 1vh;
+    width: 100%;
+}
+
+.homepageBottom__buttons--container {
+    background-color: $buttons;
+    display: flex;
+    width: 95%;
+    margin: auto;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 15px;
+    border: 1px solid;
+    border-color: white $dark-color $dark-color white;
+    &:active {
+        border-color:  $dark-color white white $dark-color ;
+    }
+    & button {
+        all: unset;
+        cursor: pointer;
+        margin-bottom: 1vh;
+    }
+}
+
+.homepageBottom__labels {
+    text-align: center;
+    font-family: $fun-font;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.homepageBottom__menu {
+    height: 90px;
+    margin-inline-end: 4vw;
+}

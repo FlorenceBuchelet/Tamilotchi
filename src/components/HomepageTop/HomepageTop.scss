@@ -1,0 +1,24 @@
+@import "../../variables.scss";
+
+.homepageTop {
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+    position: absolute;
+    width: 100vw;
+    top: 0;
+}
+
+.homepageTop__tutorial {
+    @include fun-titles;
+    border: 3.5px solid $dark-color;
+    border-radius: 50%;
+    width: 4.2rem;
+    height: 4.2rem;
+    outline: 4px solid $buttons;
+}
+
+.homepageTop__save {
+    @include buttons;
+    padding-inline: 3%;
+}

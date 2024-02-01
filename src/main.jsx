@@ -6,6 +6,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./pages/Login/Login.jsx";
 import Register from "./pages/Register/Register.jsx";
 import EggChoice from "./pages/EggChoice/EggChoice.jsx";
+import { AuthProvider } from "./contexts/authContext.jsx";
+import { TamaProvider } from "./contexts/tamaContext.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <TamaProvider>
+        <RouterProvider router={router} />
+      </TamaProvider>
+    </AuthProvider>
   </React.StrictMode>
 );

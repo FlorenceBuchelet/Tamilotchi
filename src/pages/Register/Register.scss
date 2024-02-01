@@ -1,1 +1,52 @@
 @import "../../variables.scss";
+
+.register {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+}
+
+.register__title {
+    @include fun-titles;
+    font-size: 5rem;
+    margin-block-start: 5vh;
+    line-height: 90%;
+    @include back-titles;
+}
+
+.register__mandatory {
+    @include fun-titles;
+    text-align: end;
+    font-size: 1.5rem;
+}
+
+.register__form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.register__labels {
+    @include fun-titles;
+    text-align: start;
+}
+
+.register__inputs {
+    @include form-inputs;
+}
+
+.register__register {
+    @include fun-titles;
+    font-size: 1.8rem;
+    cursor: pointer;
+    text-align: end;
+}
+
+.register__button {
+    @include buttons;
+    width: 75%;
+    margin: auto;
+    margin-block-start: 3vh;
+}

@@ -1,1 +1,61 @@
 @import "../../variables.scss";
+
+.eggChoice {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    justify-content: space-between;
+    & p {
+        line-height: 110%;
+    }
+}
+
+.eggChoice__title {
+    @include fun-titles;
+    margin-block-start: 5vh;
+    font-size: 3.5rem;
+    @include back-titles;
+}
+
+.eggChoice__form {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.eggChoice__labels {
+    @include fun-titles;
+    text-align: start;
+
+}
+
+.eggChoice__inputs {
+    @include form-inputs;
+}
+
+.eggChoice fieldset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    gap: 10%;
+}
+
+.eggChoice__radios {
+    all: unset;
+& + img {
+    cursor: pointer;
+}
+}
+
+.eggChoice__radios:checked + img {
+    outline: 4px solid $buttons;
+    padding: 5%;
+    border-radius: 50% 50% 40% 40%;
+}
+
+.eggChoice__button {
+    @include buttons;
+    margin-top: 10%;
+}

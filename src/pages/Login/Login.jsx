@@ -1,10 +1,25 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.scss";
+import { useState } from "react";
 
+/*     fetch(`${import.meta.env.VITE_BACKEND_URL}/api/`)
+.then((response) => response.json())
+.then((data) => console.log(data))
+.catch((error) => console.error(error)); */
 function Login() {
   const navigate = useNavigate();
+  const [notUser, setNotUser] = useState();
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // Check if the user is in the database (Fetch)
+    // If not: register message 
+    // setNotUser(true);
+    // if they are
+    // Check if they have a Tama
+    // if they have
+    // navigate("/homepage");
+    // if they don't
     navigate("/egg");
   };
 

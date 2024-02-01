@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import "./App.scss";
 import Tamilotchi from "./components/Tamilotchi/Tamilotchi";
+import HomepageTop from "./components/HomepageTop/HomepageTop";
+import HomepageBottom from "./components/HomepageBottom/HomepageBottom";
 
 function App() {
   const [menu, setMenu] = useState(1);
@@ -172,40 +174,44 @@ function App() {
   };
 
   return (
-    <div className="tamagotchi__egg">
-      <span className="keyring__hole" />
-      <div className="tamagotchi__container">
-        <h1 className="tamagotchi__title">Tamilotchi</h1>
-        <div className="tamagotchi">
-          <Tamilotchi
-            firstMenuClass={firstMenuClass}
-            secondMenuClass={secondMenuClass}
-            thirdMenuClass={thirdMenuClass}
-            fourthMenuClass={fourthMenuClass}
-            fifthMenuClass={fifthMenuClass}
-            sixthMenuClass={sixthMenuClass}
-            milo={milo}
-          />
+    <>
+      <HomepageTop />
+      <div className="tamagotchi__egg">
+        <span className="keyring__hole" />
+        <div className="tamagotchi__container">
+          <h1 className="tamagotchi__title">Tamilotchi</h1>
+          <div className="tamagotchi">
+            <Tamilotchi
+              firstMenuClass={firstMenuClass}
+              secondMenuClass={secondMenuClass}
+              thirdMenuClass={thirdMenuClass}
+              fourthMenuClass={fourthMenuClass}
+              fifthMenuClass={fifthMenuClass}
+              sixthMenuClass={sixthMenuClass}
+              milo={milo}
+            />
+          </div>
         </div>
+        <ul className="tamagotchi__buttons">
+          <button
+            type="button"
+            onClick={() => handleClickLeft()}
+            className="firstButton"
+          />
+          <button
+            type="submit"
+            onClick={() => handleClickOK()}
+            className="secondButton"
+          />
+          <button
+            type="button"
+            onClick={() => handleClickRight()}
+            className="thirdButton"
+          />
+        </ul>
       </div>
-      <ul className="tamagotchi__buttons">
-        <button
-          type="button"
-          onClick={() => handleClickLeft()}
-          className="firstButton"
-        />
-        <button
-          type="submit"
-          onClick={() => handleClickOK()}
-          className="secondButton"
-        />
-        <button
-          type="button"
-          onClick={() => handleClickRight()}
-          className="thirdButton"
-        />
-      </ul>
-    </div>
+      <HomepageBottom />
+    </>
   );
 }
 

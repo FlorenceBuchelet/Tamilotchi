@@ -7,9 +7,10 @@
 }
 
 .login__title {
-@include fun-titles;
-font-size: 5rem;
-margin-block-start: 5vh;
+    @include fun-titles;
+    font-size: 5rem;
+    margin-block-start: 5vh;
+    @include back-titles;
 }
 
 .login__form {
@@ -25,8 +26,7 @@ margin-block-start: 5vh;
 }
 
 .login__inputs {
-    height: 3rem;
-    border-radius: 8px;
+    @include form-inputs;
 }
 
 .login__register {

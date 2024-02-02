@@ -86,6 +86,15 @@ function App() {
     checkStatus();
   };
 
+  const heal = () => {
+    setPet((prevPet) => ({
+      ...prevPet,
+      happiness: prevPet.happiness + 5,
+      health: prevPet.health + 20,
+    }));
+    checkStatus();
+  };
+
   const decayStats = () => {
     setPet((prevPet) => ({
       ...prevPet,
@@ -192,7 +201,7 @@ function App() {
       play();
     } else if (menu === 4) {
       setObject("💊");
-      play();
+      heal();
     } else if (menu === 5) {
       setObject("💩");
       clean();

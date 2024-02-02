@@ -81,7 +81,7 @@ function Tamilotchi({
         setCurrentTama(babytchiBlack.walk[sprite].url);
         setTamaClass("babytchi__walk");
         if (object) {
-          if (object === "💕") {
+          if (object === "💕" || object === "🍙") {
             setSprite(
               (prevSprite) => (prevSprite + 1) % babytchiBlack.happy.length
             );
@@ -89,18 +89,18 @@ function Tamilotchi({
             setTamaClass("babytchi__happy");
           }
         }  else {
-          if (pet.health <= 45) {
+          if (pet.health <= 40) {
             setSprite(
               (prevSprite) => (prevSprite + 1) % babytchiBlack.sick.length
             );
             setCurrentTama(babytchiBlack.sick[sprite].url);
             setTamaClass("babytchi__sick");
-          }/* else if (pet.satiety <= 40 || pet.happiness <= 20) {
+          }  else if (pet.satiety <= 40 || pet.happiness <= 20) {
             setSprite(
               (prevSprite) => (prevSprite + 1) % babytchiBlack.upset.length
             );
             setCurrentTama(babytchiBlack.upset[sprite].url);
-          }*/
+          }
         } 
       };
       intervalId = setInterval(animateSprite, 500);

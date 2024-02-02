@@ -88,21 +88,20 @@ function Tamilotchi({
             setCurrentTama(babytchiBlack.happy[sprite].url);
             setTamaClass("babytchi__happy");
           }
-        } else {
-          if (pet.health <= 10) {
-           setSprite(
-             (prevSprite) => (prevSprite + 1) % babytchiBlack.sick.length
-           );
-           setCurrentTama(babytchiBlack.sick[sprite].url);
-           setTamaClass("babytchi__sick");
-         } else if (pet.satiety <= 40 || pet.happiness <= 20) {
+        }  else {
+          if (pet.health <= 45) {
+            setSprite(
+              (prevSprite) => (prevSprite + 1) % babytchiBlack.sick.length
+            );
+            setCurrentTama(babytchiBlack.sick[sprite].url);
+            setTamaClass("babytchi__sick");
+          }/* else if (pet.satiety <= 40 || pet.happiness <= 20) {
             setSprite(
               (prevSprite) => (prevSprite + 1) % babytchiBlack.upset.length
             );
             setCurrentTama(babytchiBlack.upset[sprite].url);
-            setTamaClass("babytchi__walk");
-          } 
-        }
+          }*/
+        } 
       };
       intervalId = setInterval(animateSprite, 500);
     }

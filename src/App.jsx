@@ -183,10 +183,10 @@ function App() {
   const handleClickOK = () => {
     if (menu === 1) {
       setObject("🍙");
-      clean();
+      feed();
     } else if (menu === 2) {
       setObject("😡");
-      feed();
+      play();
     } else if (menu === 3) {
       setObject("💡");
       play();
@@ -195,7 +195,7 @@ function App() {
       play();
     } else if (menu === 5) {
       setObject("💩");
-      play();
+      clean();
     } else if (menu === 6) {
       setObject("💕");
       play();

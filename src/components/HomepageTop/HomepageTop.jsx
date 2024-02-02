@@ -3,12 +3,16 @@ import "./HomepageTop.scss";
 function HomepageTop({ pet, tamilotchiId }) {
   const handleSave = async () => {
     // UPDATE table tamagotchi
-    console.log("fuck this", {
+    console.log(
+      "homepageTop update sent",
+      {
         satiety: pet.satiety,
         happiness: pet.happiness,
         health: pet.health,
-        age: pet.age
-      }, tamilotchiId);
+        age: pet.age,
+      },
+      tamilotchiId
+    );
     try {
       const response = await fetch(
         `${import.meta.env.VITE_BACKEND_URL}/tama/${tamilotchiId}/update`,
@@ -16,10 +20,10 @@ function HomepageTop({ pet, tamilotchiId }) {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            satiety: "100",
-            happiness: "100",
-            health: "100",
-            age: "100"
+            satiety: pet.satiety,
+            happiness: pet.happiness,
+            health: pet.health,
+            age: pet.age,
           }),
         }
       );

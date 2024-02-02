@@ -3,7 +3,7 @@ const babytchiBlack = {
   walk: [
     {
       id: 1,
-      url: "/sprites/babytchi/babytchi-walk1.png"
+      url: "/sprites/babytchi/babytchi-walk1.png",
     },
     {
       id: 2,
@@ -16,9 +16,10 @@ const babytchiBlack = {
     {
       id: 4,
       url: "/sprites/babytchi/babytchi-walk4.png",
-    },    {
+    },
+    {
       id: 1,
-      url: "/sprites/babytchi/babytchi-walk1Copie.png"
+      url: "/sprites/babytchi/babytchi-walk1Copie.png",
     },
     {
       id: 2,
@@ -36,7 +37,7 @@ const babytchiBlack = {
   happy: [
     {
       id: 1,
-      url: "/sprites/babytchi/babytchi-happy1.png"
+      url: "/sprites/babytchi/babytchi-happy1.png",
     },
     {
       id: 2,
@@ -49,7 +50,7 @@ const babytchiBlack = {
     {
       id: 4,
       url: "/sprites/babytchi/babytchi-happy4.png",
-    },   
+    },
     {
       id: 5,
       url: "/sprites/babytchi/babytchi-happy5.png",
@@ -61,7 +62,7 @@ const babytchiBlack = {
     {
       id: 7,
       url: "/sprites/babytchi/babytchi-happy7.png",
-    },    
+    },
     {
       id: 8,
       url: "/sprites/babytchi/babytchi-happy6.png",
@@ -71,24 +72,86 @@ const babytchiBlack = {
       url: "/sprites/babytchi/babytchi-happy7.png",
     },
   ],
-/*   babytchi3: [
+  upset: [
     {
       id: 1,
-      url: "/sprites/babytchi/babytchi3-1.png"
+      url: "/sprites/babytchi/babytchi-upset1.png",
     },
     {
       id: 2,
-      url: "/sprites/babytchi/babytchi3-2.png",
+      url: "/sprites/babytchi/babytchi-upset2.png",
     },
     {
       id: 3,
-      url: "/sprites/babytchi/babytchi3-3.png",
+      url: "/sprites/babytchi/babytchi-upset3.png",
     },
     {
       id: 4,
-      url: "/sprites/babytchi/babytchi3-4.png",
+      url: "/sprites/babytchi/babytchi-upset4.png",
     },
-  ], */
+    {
+      id: 1,
+      url: "/sprites/babytchi/babytchi-upset1Copie.png",
+    },
+    {
+      id: 2,
+      url: "/sprites/babytchi/babytchi-upset2Copie.png",
+    },
+    {
+      id: 3,
+      url: "/sprites/babytchi/babytchi-upset3Copie.png",
+    },
+    {
+      id: 4,
+      url: "/sprites/babytchi/babytchi-upset4Copie.png",
+    },
+  ],
+  sick: [
+    {
+      id: 1,
+      url: "/sprites/babytchi/babytchi-sick1.png",
+    },
+    {
+      id: 1,
+      url: "/sprites/babytchi/babytchi-sick1.png",
+    },
+    {
+      id: 1,
+      url: "/sprites/babytchi/babytchi-sick1.png",
+    },
+    {
+      id: 1,
+      url: "/sprites/babytchi/babytchi-sick1.png",
+    },
+    {
+      id: 1,
+      url: "/sprites/babytchi/babytchi-sick1.png",
+    },
+    {
+      id: 2,
+      url: "/sprites/babytchi/babytchi-sick2.png",
+    },
+    {
+      id: 2,
+      url: "/sprites/babytchi/babytchi-sick2.png",
+    },
+    {
+      id: 2,
+      url: "/sprites/babytchi/babytchi-sick2.png",
+    },
+    {
+      id: 2,
+      url: "/sprites/babytchi/babytchi-sick2.png",
+    },
+    {
+      id: 2,
+      url: "/sprites/babytchi/babytchi-sick2.png",
+    },
+    {
+      id: 2,
+      url: "/sprites/babytchi/babytchi-sick2.png",
+    },
+  ],
 };
 
 export default babytchiBlack;

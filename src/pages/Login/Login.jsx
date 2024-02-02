@@ -2,11 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Login.scss";
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../contexts/authContext";
+import { TamasContext } from "../../contexts/tamasContext";
 
-/*     fetch(`${import.meta.env.VITE_BACKEND_URL}/api/`)
-.then((response) => response.json())
-.then((data) => console.log(data))
-.catch((error) => console.error(error)); */
 function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -14,6 +11,8 @@ function Login() {
   const [notUser, setNotUser] = useState();
 
   const { setUser } = useContext(AuthContext);
+  const { setTamas } = useContext(TamasContext);
+
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -32,7 +31,19 @@ function Login() {
       if (response.status === 200) {
         const user = await response.json();
         setUser(user[0].user_id);
-        navigate("/egg");
+          try {
+            const checkTamas = await fetch(
+              `${import.meta.env.VITE_BACKEND_URL}/api/user/${user[0].user_id}/tamas`)
+              const existingTamas = await checkTamas.json();
+              if (existingTamas[0]) {
+                setTamas(existingTamas);
+                navigate("/homepage");
+              } else {
+                navigate("/egg");
+              }
+            } catch (error) {
+              console.error("Error", error)
+            }
       } else {
         setNotUser(true);
         console.info(response);
@@ -43,11 +54,6 @@ function Login() {
     // Check if the user is in the database (Fetch)
     // If not: register message 
     // setNotUser(true);
-    // if they are
-    // Check if they have a Tama
-    // if they have
-    // navigate("/homepage");
-    // if they don't
   };
 
   return (

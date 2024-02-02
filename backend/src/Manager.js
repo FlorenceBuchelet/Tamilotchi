@@ -34,11 +34,23 @@ class Manager {
     return rows;
   }
 
-  async readTama() {
+  async readUserTamas(user_id) {
     const [rows] = await this.database.query(
       `SELECT *
       FROM ${this.table}
-      WHERE user_id = ?;`
+      WHERE user_id = ?;`,
+      [user_id]
+    );
+    // Return the array of tamas
+    return rows;
+  }
+
+  async readTama(tama_id) {
+    const [rows] = await this.database.query(
+      `SELECT *
+      FROM ${this.table}
+      WHERE tamilotchi_id = ?;`,
+      [tama_id]
     );
     return rows[0];
   }
@@ -50,8 +62,24 @@ class Manager {
         WHERE email = ?`,
       [email]
     );
-      // Return the user as first row of the result
-      return rows;
+    // Return the user as first row of the result
+    return rows;
+  }
+
+  async newStats(tama_id, tama) {
+    const [rows] = await this.database.query(
+      `UPDATE ${this.table}
+        SET satiety = ?, happiness = ?, health = ?, age = ?
+        WHERE tamilotchi_id = ?;`,
+      [
+        tama.satiety,
+        tama.happiness,
+        tama.health,
+        tama.age,
+        tama_id,
+      ]
+    );
+    return rows;
   }
 }
 

@@ -21,5 +21,11 @@ router.post("/tama/create", controllers.addTama);
 // Read Tama
 router.get("/tama/:id", controllers.getTama);
 
+// Get all Tamas a user has
+router.get("/user/:id/tamas", controllers.getUserTamas);
+
+// Tama stats save
+router.put("/tama/:id/update", controllers.updateStats)
+
 
 module.exports = router;

@@ -2,22 +2,17 @@ import { useNavigate } from "react-router-dom";
 import "./EggChoice.scss";
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../contexts/authContext";
-import { TamaContext } from "../../contexts/tamaContext";
-
+import { TamasContext } from "../../contexts/tamasContext";
 
 function EggChoice() {
   const nicknameRef = useRef();
   const [eggValue, setEggValue] = useState();
   const { user } = useContext(AuthContext);
-  const { setTama } = useContext(TamaContext);
+  const { tamas, setTamas } = useContext(TamasContext);
   const navigate = useNavigate();
-
-  console.log(user);
 
   const handleChoice = async (e) => {
     e.preventDefault();
-    console.log(eggValue, nicknameRef.current.value);
-
     try {
       const response = await fetch(
         `${import.meta.env.VITE_BACKEND_URL}/api/tama/create`,
@@ -28,24 +23,32 @@ function EggChoice() {
             name: nicknameRef.current.value,
             sprite: eggValue,
             user_id: user,
-          })
+          }),
         }
       );
-
       if (response.status === 201) {
-        setTama({ tamilotchi_id: response.insertId })
-        navigate("/homepage"); 
+        // set only the id but I need the whole pet
+        const insertId = await response.json();
+        try {
+          const fetchNewTama = await fetch(
+            `${import.meta.env.VITE_BACKEND_URL}/api/tama/${insertId}`
+          );
+          const newTama = await fetchNewTama.json();
+          if (newTama[0]) {
+          setTamas({ newTama });
+          }
+        } catch (err) {
+          console.error(err);
+        }
+        navigate("/homepage");
       } else {
         console.info(response);
       }
     } catch (err) {
-      console.error("Error in Tama creation", err)
+      console.error("Error in Tama creation", err);
     }
-
-    // if fetch ok, navigate.
     // if not ok, message "Something went wrong, let's try again."
   };
-
 
   return (
     <main className="eggChoice">
@@ -62,6 +65,7 @@ function EggChoice() {
           id="eggName"
           type="text"
           ref={nicknameRef}
+          required
         />
         <p className="eggChoice__labels">Choose an egg</p>
         <fieldset>
@@ -72,7 +76,7 @@ function EggChoice() {
               name="eggs"
               value="egg1"
               type="radio"
-              onClick={() => setEggValue("egg1")}
+              onClick={() => setEggValue("sprites/eggs/egg1-1")}
             />
             <img
               className="eggChoice__radios--imgs"
@@ -88,7 +92,7 @@ function EggChoice() {
               value="egg2"
               type="radio"
               defaultChecked
-              onClick={() => setEggValue("egg2")}
+              onClick={() => setEggValue("sprites/eggs/egg2-1")}
             />
             <img
               className="eggChoice__radios--imgs"
@@ -103,7 +107,7 @@ function EggChoice() {
               name="eggs"
               value="egg3"
               type="radio"
-              onClick={() => setEggValue("egg3")}
+              onClick={() => setEggValue("sprites/eggs/egg3-1")}
             />
             <img
               className="eggChoice__radios--imgs"

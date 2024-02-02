@@ -16,12 +16,28 @@ const getAllUsers = async (req, res, next) => {
   }
 };
 
-// Get a specific tama
-const getTama = async (req, res, next) => {
-  const id = parseInt(req.params.id, 10);
+// Get a user's tamas
+const getUserTamas = async (req, res, next) => {
+  const user_id = parseInt(req.params.id, 10);
   try {
     const manager = new Manager({ table: 'tamilotchi' });
-    const tama = await manager.readTama(id);
+    const tamas = await manager.readUserTamas(user_id);
+    if (tamas == null) {
+      res.sendStatus(404);
+    } else {
+      res.json(tamas);
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
+// Get a specific tama
+const getTama = async (req, res, next) => {
+  const tama_id = parseInt(req.params.id, 10);
+  try {
+    const manager = new Manager({ table: 'tamilotchi' });
+    const tama = await manager.readTama(tama_id);
     if (tama == null) {
       res.sendStatus(404);
     } else {
@@ -82,10 +98,27 @@ const login = async (req, res, next) => {
   }
 };
 
+const updateStats = async (req, res, next) => {
+  try {
+    const tama_id = parseInt(req.params.id, 10);
+    const manager = new Manager({ table: 'tamilotchi'});
+    const updatedTama = await manager.newStats(tama_id, req.body);
+    if (updatedTama == null) {
+      res.sendStatus(404);
+    } else {
+      res.status(201).json(updatedTama);
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   getAllUsers,
+  getUserTamas,
   getTama,
   add,
   addTama,
   login,
+  updateStats,
 };

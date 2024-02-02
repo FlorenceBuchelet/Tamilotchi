@@ -8,6 +8,22 @@ const eggs = {
     {
       id: 2,
       url: "/sprites/eggs/egg1-2.png",
+    },    
+    {
+      id: 1,
+      url: "/sprites/eggs/egg1-1.png"
+    },
+    {
+      id: 2,
+      url: "/sprites/eggs/egg1-2.png",
+    },
+    {
+      id: 1,
+      url: "/sprites/eggs/egg1-1.png"
+    },
+    {
+      id: 2,
+      url: "/sprites/eggs/egg1-2.png",
     },
     {
       id: 3,

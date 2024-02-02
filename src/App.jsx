@@ -1,8 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import "./App.scss";
 import Tamilotchi from "./components/Tamilotchi/Tamilotchi";
 import HomepageTop from "./components/HomepageTop/HomepageTop";
 import HomepageBottom from "./components/HomepageBottom/HomepageBottom";
+import { TamasContext } from "./contexts/tamasContext";
+import { AuthContext } from "./contexts/authContext";
+import { useNavigate } from "react-router-dom";
 
 function App() {
   const [menu, setMenu] = useState(1);
@@ -14,22 +17,48 @@ function App() {
   const [fourthMenuClass, setFourthMenuClass] = useState(" ");
   const [fifthMenuClass, setFifthMenuClass] = useState(" ");
   const [sixthMenuClass, setSixthMenuClass] = useState(" ");
-  const [milo, setMilo] = useState("");
+  const [object, setObject] = useState("");
+
+  const { tamas, setTamas } = useContext(TamasContext);
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  // Pet latest stats
+  useEffect(() => {
+    // fetch the tama[0]'s stats in context and initialize the pet
+    const fetchTamas = async () => {
+      try {
+        const checkTamas = await fetch(
+          `${import.meta.env.VITE_BACKEND_URL}/api/user/${user}/tamas`
+        );
+        const existingTamas = await checkTamas.json();
+        if (existingTamas[0]) {
+          setTamas(existingTamas);
+        } else {
+          navigate("/egg");
+        }
+      } catch (error) {
+        console.error("Error", error);
+      }
+    };
+    fetchTamas();
+  }, []);
 
   // pet's stats management
   const [pet, setPet] = useState({
-    name: "Tama",
-    hunger: 50,
-    happiness: 50,
-    health: 50,
-    age: 0,
-    isAlive: true,
+    name: tamas[0].name,
+    satiety: tamas[0].satiety,
+    happiness: tamas[0].happiness,
+    health: tamas[0].health,
+    age: tamas[0].age,
+    sprite: tamas[0].sprite,
+    isAlive: tamas[0].isAlive,
   });
 
   const feed = () => {
     setPet((prevPet) => ({
       ...prevPet,
-      hunger: prevPet.hunger - 10,
+      satiety: prevPet.satiety + 10,
       happiness: prevPet.happiness + 5,
       health: prevPet.health + 2,
       age: prevPet.age + 1,
@@ -40,7 +69,7 @@ function App() {
   const play = () => {
     setPet((prevPet) => ({
       ...prevPet,
-      hunger: prevPet.hunger + 5,
+      satiety: prevPet.satiety - 5,
       happiness: prevPet.happiness + 10,
       health: prevPet.health + 3,
       age: prevPet.age + 1,
@@ -60,7 +89,7 @@ function App() {
   const decayStats = () => {
     setPet((prevPet) => ({
       ...prevPet,
-      hunger: prevPet.hunger + 2,
+      satiety: prevPet.satiety - 2,
       happiness: prevPet.happiness - 2,
       health: prevPet.health - 1,
       age: prevPet.age + 1,
@@ -69,9 +98,9 @@ function App() {
   };
 
   const checkStatus = () => {
-    if (pet.hunger >= 100 || pet.happiness <= 0 || pet.health <= 0) {
+    if (pet.satiety <= 0 || pet.happiness <= 0 || pet.health <= 0) {
       setPet((prevPet) => ({ ...prevPet, isAlive: false }));
-      alert(`${pet.name} has passed away. Game over!`);
+      /* alert(`${pet.name} has passed away. Game over!`); */
     }
   };
 
@@ -87,7 +116,7 @@ function App() {
     if (pet.isAlive) {
       console.log(`${pet.name} is doing well.`);
       console.log(
-        `Hunger: ${pet.hunger}, Happiness: ${pet.happiness}, Health: ${pet.health}, Age: ${pet.age}`
+        `Hunger: ${pet.satiety}, Happiness: ${pet.happiness}, Health: ${pet.health}, Age: ${pet.age}`
       );
     }
   }, [pet]);
@@ -153,29 +182,39 @@ function App() {
 
   const handleClickOK = () => {
     if (menu === 1) {
-      setMilo("💩");
+      setObject("🍙");
       clean();
     } else if (menu === 2) {
-      setMilo("🌽");
+      setObject("😡");
       feed();
     } else if (menu === 3) {
-      setMilo("🥚");
+      setObject("💡");
       play();
     } else if (menu === 4) {
-      setMilo("💪");
+      setObject("💊");
       play();
     } else if (menu === 5) {
-      setMilo("💕");
+      setObject("💩");
       play();
     } else if (menu === 6) {
-      setMilo("🎉");
+      setObject("💕");
       play();
     }
   };
 
+  // Reset object after 5s
+  useEffect(() => {
+    const resetObject = setTimeout(() => {
+      setObject("");
+    }, 5000);
+    return () => {
+      clearTimeout(resetObject);
+    };
+  }, [object]);
+
   return (
     <>
-      <HomepageTop />
+      <HomepageTop pet={pet} tamilotchiId={tamas[0].tamilotchi_id} />
       <div className="tamagotchi__egg">
         <span className="keyring__hole" />
         <div className="tamagotchi__container">
@@ -188,7 +227,9 @@ function App() {
               fourthMenuClass={fourthMenuClass}
               fifthMenuClass={fifthMenuClass}
               sixthMenuClass={sixthMenuClass}
-              milo={milo}
+              object={object}
+              pet={pet}
+              setPet={setPet}
             />
           </div>
         </div>

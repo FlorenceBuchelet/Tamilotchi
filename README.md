@@ -18,3 +18,12 @@ Back : Express, Node.
 Project done from scratch.
 
 ![tamilotchi drawio(1)](https://github.com/FlorenceBuchelet/tamagotchi/assets/144147299/010fd996-80f6-426a-9b1b-b5e0fc614d0d)
+
+## How to launch
+
+> clone repo
+> npm install
+> in the Backend folder: node index.js
+> in the Frontend folder: npm run dev
+
+Enjoy :D

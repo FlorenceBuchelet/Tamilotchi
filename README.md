@@ -21,9 +21,9 @@ Project done from scratch.
 
 ## How to launch
 
-> clone repo
-> npm install
-> in the Backend folder: node index.js
-> in the Frontend folder: npm run dev
+- clone repo
+- npm install
+- in the Backend folder: node index.js
+- in the Frontend folder: npm run dev
 
 Enjoy :D

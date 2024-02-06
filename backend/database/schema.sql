@@ -19,8 +19,8 @@ CREATE TABLE tamilotchi (
     age INT NOT NULL DEFAULT '0',
     background VARCHAR(255) DEFAULT '/backgrounds/Gen1BG.png',
 /* egg, babytchi, kuchitamatchi, kuchipatchi, mametchi*/
-    sprite VARCHAR(50) DEFAULT 'babytchi',
-    isAlive BOOL DEFAULT 1,
+    sprite VARCHAR(255),
+    isAlive BOOL DEFAULT 1
 );
 
 CREATE TABLE collection (

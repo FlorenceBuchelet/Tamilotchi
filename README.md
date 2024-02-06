@@ -25,5 +25,6 @@ Project done from scratch.
 - npm install
 - in the Backend folder: node index.js
 - in the Frontend folder: npm run dev
+- in your SQL Database Service: run the schema.sql you can find in database>schema
 
 Enjoy :D
